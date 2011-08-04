@@ -2326,3 +2326,81 @@ NoMethodError (undefined method `validates' for #<Class:0x7c05b58>):
 Rendered rescues/_trace (38.0ms)
 Rendered rescues/_request_and_response (0.0ms)
 Rendering rescues/layout (internal_server_error)
+
+
+Processing MembersController#index (for 127.0.0.1 at 2011-08-04 18:58:43) [GET]
+  [4;35;1mSQL (17.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `validates' for #<Class:0x7c686c0>):
+  app/models/user.rb:7:in `<class:User>'
+  app/models/user.rb:2:in `<top (required)>'
+  rake (0.9.2) lib/rake/ext/module.rb:36:in `const_missing'
+  rake (0.9.2) lib/rake/ext/module.rb:36:in `const_missing'
+  app/helpers/sessions_helper.rb:31:in `user_from_remember_token'
+  app/helpers/sessions_helper.rb:13:in `current_user'
+  app/controllers/application_controller.rb:6:in `ensure_is_signed_in'
+  <internal:prelude>:10:in `synchronize'
+  c:/Ruby192/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  c:/Ruby192/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  c:/Ruby192/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (64.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2011-08-04 18:59:10) [GET]
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 390ms (View: 388, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2011-08-04 19:34:46) [GET]
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 142ms (View: 139, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing LanguagesController#index (for 127.0.0.1 at 2011-08-04 19:37:45) [GET]
+Rendering template within layouts/application
+Rendering languages/index
+Completed in 47ms (View: 43, DB: 0) | 200 OK [http://localhost/languages]
+
+
+Processing LanguagesController#index (for 127.0.0.1 at 2011-08-04 19:37:59) [GET]
+  Parameters: {"first"=>"2011-06-05", "last"=>"2011-06-26", "interval"=>"7"}
+  [4;36;1mLanguage Load (37.0ms)[0m   [0;1mSELECT * FROM "languages" [0m
+  [4;35;1mLetter Load (279.0ms)[0m   [0mSELECT * FROM "letters" WHERE (language_id = 1 AND created_at between '2011-06-05' and '2011-06-13') AND ("letters".language_id = 1) [0m
+  [4;36;1mLetter Load (21.0ms)[0m   [0;1mSELECT * FROM "letters" WHERE (language_id = 1 AND created_at between '2011-06-12' and '2011-06-20') AND ("letters".language_id = 1) [0m
+  [4;35;1mLetter Load (21.0ms)[0m   [0mSELECT * FROM "letters" WHERE (language_id = 1 AND created_at between '2011-06-19' and '2011-06-27') AND ("letters".language_id = 1) [0m
+  [4;36;1mLetter Load (16.0ms)[0m   [0;1mSELECT * FROM "letters" WHERE (language_id = 1 AND created_at between '2011-06-26' and '2011-07-04') AND ("letters".language_id = 1) [0m
+  [4;35;1mLetter Load (23.0ms)[0m   [0mSELECT * FROM "letters" WHERE (language_id = 2 AND created_at between '2011-06-05' and '2011-06-13') AND ("letters".language_id = 2) [0m
+  [4;36;1mLetter Load (15.0ms)[0m   [0;1mSELECT * FROM "letters" WHERE (language_id = 2 AND created_at between '2011-06-12' and '2011-06-20') AND ("letters".language_id = 2) [0m
+  [4;35;1mLetter Load (18.0ms)[0m   [0mSELECT * FROM "letters" WHERE (language_id = 2 AND created_at between '2011-06-19' and '2011-06-27') AND ("letters".language_id = 2) [0m
+  [4;36;1mLetter Load (20.0ms)[0m   [0;1mSELECT * FROM "letters" WHERE (language_id = 2 AND created_at between '2011-06-26' and '2011-07-04') AND ("letters".language_id = 2) [0m
+  [4;35;1mLetter Load (70.0ms)[0m   [0mSELECT * FROM "letters" WHERE (language_id = 3 AND created_at between '2011-06-05' and '2011-06-13') AND ("letters".language_id = 3) [0m
+  [4;36;1mLetter Load (40.0ms)[0m   [0;1mSELECT * FROM "letters" WHERE (language_id = 3 AND created_at between '2011-06-12' and '2011-06-20') AND ("letters".language_id = 3) [0m
+  [4;35;1mLetter Load (22.0ms)[0m   [0mSELECT * FROM "letters" WHERE (language_id = 3 AND created_at between '2011-06-19' and '2011-06-27') AND ("letters".language_id = 3) [0m
+  [4;36;1mLetter Load (25.0ms)[0m   [0;1mSELECT * FROM "letters" WHERE (language_id = 3 AND created_at between '2011-06-26' and '2011-07-04') AND ("letters".language_id = 3) [0m
+  [4;35;1mLetter Load (21.0ms)[0m   [0mSELECT * FROM "letters" WHERE (language_id = 4 AND created_at between '2011-06-05' and '2011-06-13') AND ("letters".language_id = 4) [0m
+  [4;36;1mLetter Load (19.0ms)[0m   [0;1mSELECT * FROM "letters" WHERE (language_id = 4 AND created_at between '2011-06-12' and '2011-06-20') AND ("letters".language_id = 4) [0m
+  [4;35;1mLetter Load (19.0ms)[0m   [0mSELECT * FROM "letters" WHERE (language_id = 4 AND created_at between '2011-06-19' and '2011-06-27') AND ("letters".language_id = 4) [0m
+  [4;36;1mLetter Load (22.0ms)[0m   [0;1mSELECT * FROM "letters" WHERE (language_id = 4 AND created_at between '2011-06-26' and '2011-07-04') AND ("letters".language_id = 4) [0m
+  [4;35;1mLetter Load (24.0ms)[0m   [0mSELECT * FROM "letters" WHERE (language_id = 5 AND created_at between '2011-06-05' and '2011-06-13') AND ("letters".language_id = 5) [0m
+  [4;36;1mLetter Load (19.0ms)[0m   [0;1mSELECT * FROM "letters" WHERE (language_id = 5 AND created_at between '2011-06-12' and '2011-06-20') AND ("letters".language_id = 5) [0m
+  [4;35;1mLetter Load (21.0ms)[0m   [0mSELECT * FROM "letters" WHERE (language_id = 5 AND created_at between '2011-06-19' and '2011-06-27') AND ("letters".language_id = 5) [0m
+  [4;36;1mLetter Load (20.0ms)[0m   [0;1mSELECT * FROM "letters" WHERE (language_id = 5 AND created_at between '2011-06-26' and '2011-07-04') AND ("letters".language_id = 5) [0m
+  [4;35;1mLetter Load (19.0ms)[0m   [0mSELECT * FROM "letters" WHERE (language_id = 6 AND created_at between '2011-06-05' and '2011-06-13') AND ("letters".language_id = 6) [0m
+  [4;36;1mLetter Load (19.0ms)[0m   [0;1mSELECT * FROM "letters" WHERE (language_id = 6 AND created_at between '2011-06-12' and '2011-06-20') AND ("letters".language_id = 6) [0m
+  [4;35;1mLetter Load (18.0ms)[0m   [0mSELECT * FROM "letters" WHERE (language_id = 6 AND created_at between '2011-06-19' and '2011-06-27') AND ("letters".language_id = 6) [0m
+  [4;36;1mLetter Load (19.0ms)[0m   [0;1mSELECT * FROM "letters" WHERE (language_id = 6 AND created_at between '2011-06-26' and '2011-07-04') AND ("letters".language_id = 6) [0m
+  [4;35;1mLetter Load (18.0ms)[0m   [0mSELECT * FROM "letters" WHERE (language_id = 7 AND created_at between '2011-06-05' and '2011-06-13') AND ("letters".language_id = 7) [0m
+  [4;36;1mLetter Load (19.0ms)[0m   [0;1mSELECT * FROM "letters" WHERE (language_id = 7 AND created_at between '2011-06-12' and '2011-06-20') AND ("letters".language_id = 7) [0m
+  [4;35;1mLetter Load (19.0ms)[0m   [0mSELECT * FROM "letters" WHERE (language_id = 7 AND created_at between '2011-06-19' and '2011-06-27') AND ("letters".language_id = 7) [0m
+  [4;36;1mLetter Load (15.0ms)[0m   [0;1mSELECT * FROM "letters" WHERE (language_id = 7 AND created_at between '2011-06-26' and '2011-07-04') AND ("letters".language_id = 7) [0m
+Rendering template within layouts/application
+Rendering languages/index
+Completed in 1431ms (View: 25, DB: 918) | 200 OK [http://localhost/languages?first=2011-06-05&last=2011-06-26&interval=7]
