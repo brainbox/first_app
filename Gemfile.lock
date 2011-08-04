@@ -29,6 +29,6 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
-  rails (~> 2.3.8)
+  rails (= 2.3.8)
   rdoc
   sqlite3-ruby
