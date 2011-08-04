@@ -2,7 +2,7 @@ source :gemcutter
 gem "rails", "2.3.8"
 gem "sqlite3-ruby", :require => "sqlite3"
 gem "rdoc"
-gem "rake", "0.9.2"
+gem "rake", "0.8.7"
 
 gem 'sqlite3'
 group :development, :test do
