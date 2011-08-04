@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @letter_campaign.name %>
+</p>
+
+<p>
+  <b>Slug:</b>
+  <%= @letter_campaign.slug %>
+</p>
+
+
+<%= link_to 'Edit', edit_letter_campaign_path(@letter_campaign) %> |
+<%= link_to 'Back', letter_campaigns_path %>

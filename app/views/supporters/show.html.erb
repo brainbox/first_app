@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Language:</b>
+  <%= @supporter.language_id %>
+</p>
+
+<p>
+  <b>Country code:</b>
+  <%= @supporter.country_code %>
+</p>
+
+
+<%= link_to 'Edit', edit_supporter_path(@supporter) %> |
+<%= link_to 'Back', supporters_path %>

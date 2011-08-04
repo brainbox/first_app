@@ -1,0 +1,25 @@
+<h1>Listing supporters</h1>
+
+<table>
+  <tr>
+    <th>Language</th>
+    <th>Country code</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @supporters.each do |supporter| %>
+  <tr>
+    <td><%= supporter.language_id %></td>
+    <td><%= supporter.country_code %></td>
+    <td><%= link_to 'Show', supporter %></td>
+    <td><%= link_to 'Edit', edit_supporter_path(supporter) %></td>
+    <td><%= link_to 'Destroy', supporter, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Supporter', new_supporter_path %>

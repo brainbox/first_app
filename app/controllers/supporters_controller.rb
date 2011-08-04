@@ -1,0 +1,3 @@
+class SupportersController < ApplicationController
+
+end

@@ -1,10 +1,11 @@
-# Filters added to this controller apply to all controllers in the application.
-# Likewise, all the methods added will be available for all controllers.
-
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
-  protect_from_forgery # See ActionController::RequestForgeryProtection for details
-
-  # Scrub sensitive parameters from your log
-  # filter_parameter_logging :password
+  #protect_from_forgery
+  include SessionsHelper
+    def ensure_is_signed_in
+    if current_user.nil? && !Rails.env.test?
+      redirect_to(root_url, :notice => 'You must be logged in.')
+	  return false
+    end
+  end
 end

@@ -1,0 +1,53 @@
+<%= form_for(@language) do |f| %>
+  <% if @language.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@language.errors.count, "error") %> prohibited this language from being saved:</h2>
+
+      <ul>
+      <% @language.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :lang_code %><br />
+    <%= f.text_field :lang_code %>
+  </div>
+  <div class="field">
+    <%= f.label :lang_name %><br />
+    <%= f.text_field :lang_name %>
+  </div>
+  <div class="field">
+    <%= f.label :short_code %><br />
+    <%= f.text_field :short_code %>
+  </div>
+  <div class="field">
+    <%= f.label :i18n_identifier %><br />
+    <%= f.text_field :i18n_identifier %>
+  </div>
+  <div class="field">
+    <%= f.label :custom_css %><br />
+    <%= f.text_field :custom_css %>
+  </div>
+  <div class="field">
+    <%= f.label :active %><br />
+    <%= f.text_field :active %>
+  </div>
+  <div class="field">
+    <%= f.label :in_menus %><br />
+    <%= f.text_field :in_menus %>
+  </div>
+  <div class="field">
+    <%= f.label :default_domain_id %><br />
+    <%= f.text_field :default_domain_id %>
+  </div>
+  <div class="field">
+    <%= f.label :root_slug %><br />
+    <%= f.text_field :root_slug %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

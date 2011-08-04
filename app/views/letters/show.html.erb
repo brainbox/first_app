@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Letter campaign:</b>
+  <%= @letter.letter_campaign_id %>
+</p>
+
+<p>
+  <b>Language:</b>
+  <%= @letter.language_id %>
+</p>
+
+<p>
+  <b>Supporter:</b>
+  <%= @letter.supporter_id %>
+</p>
+
+<p>
+  <b>Country code:</b>
+  <%= @letter.country_code %>
+</p>
+
+
+<%= link_to 'Edit', edit_letter_path(@letter) %> |
+<%= link_to 'Back', letters_path %>

@@ -1,0 +1,83 @@
+<div class="innerContainer"></br>
+<h1 style="text-align:center;">Graph on Different Languages</h1></br></br>
+
+
+
+<% form_tag languages_path,  :method => 'get' do %>
+<p>
+	Start Date: <input class="picker" name="first" type="text" value="<%= @first.strftime('%Y-%m-%d') unless @first.nil? %>" /></p></br></br>
+	<p>End Date: &nbsp;  <input class="picker" name="last" type="text" value="<%= @last.strftime('%Y-%m-%d') unless @last.nil? %>"/></p></br></br>
+	<p>Interval: &nbsp; &nbsp; <input type="text" name="interval" value="<%= @interval %>"/></p></br></br>
+	<%= submit_tag "Load Graph", :name => nil %>
+</p>
+<% end %>
+
+<% if @series -%>
+<script type="text/javascript" charset="utf-8">
+  $(function() {
+    new Highcharts.Chart({
+      chart: {
+        renderTo: "language_chart",
+	
+	zoomType: 'x',
+        spacingRight: 20
+      },
+      title: {
+        text: "Letters in Different Languages"
+      },
+	  subtitle: {
+         text: "Letters per Week"
+      },
+	  xAxis: {  
+        type: "datetime",
+	 maxZoom: 14 * 24 * 3600000, // fourteen days
+        labels: {
+	  rotation: -45,
+          align: 'right',
+          formatter: function() {
+           return Highcharts.dateFormat("%b %e, %Y", this.value-1);
+          }
+        }
+	
+      },
+      yAxis: {
+        title: {
+          text: "Number of Letters"
+        }
+      },
+   
+      tooltip: {
+	  
+        formatter: function() {
+          return Highcharts.dateFormat("%B %e, %Y", this.x) + ': ' + 
+                 Highcharts.numberFormat(this.y, 0) + ' letters' + '<br/> Language: ' + this.series.name ;
+        }
+	
+      },
+      
+     series: [
+      <%- @series.each_key do |key| %>
+      {
+          name: '<%= key %>',
+          pointInterval: <%= @interval.days * 1000 %>,
+          pointStart: <%= (@first+ 1.day).to_i * 1000 %>,
+          pointEnd: <%= (@last+ 1.day).to_i * 1000  %>,
+          data: <%= @series[key] %>
+         },
+       <%- end %>
+       ],
+    });
+  });
+</script>
+<div id="language_chart" style="width:1000px; height: 600px;"></div>
+<% end -%>
+
+<br />
+<br />
+
+
+
+
+<%= link_to 'Home Page', members_path %> |
+<%= link_to "Sign out", signout_path %></p>
+</div>

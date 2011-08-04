@@ -1,0 +1,133 @@
+*{
+margin:0;
+padding:0;
+}
+Body{
+	font-family:Arial,Helvetica,Geneva,sans-serif;
+	font-size:12px;
+	background-color:#333333;
+	color:#ffffff;
+	
+}
+
+div.container{
+	width:1360px;
+	margin: 0 auto;
+	background-color:#9A3622;
+	
+	
+}
+
+div.innerContainer{
+	position:relative;
+	float:left;
+	width:1100px;
+	margin-left:180px;
+	color:#ffffff;
+	font-size:16px;
+	font-family:Arial,Helvetica,Geneva,sans-serif;
+	
+	}
+div.header {
+	
+  padding-top: 115px;
+  background:url('../images/banner.png') no-repeat;
+  padding-bottom: 30px;
+  margin-left:180px;
+  color:#ffffff;
+}
+
+
+div.mainContent {
+  padding-top: 50px;
+ background:url('../images/upper.png') no-repeat;
+
+}
+
+#.campaign_chart{
+	position:relative;
+	float:left;
+
+}
+
+#.language_chart{
+	position:relative;
+	float:left;
+	
+}
+ div.nav{
+	position: relative;
+	float: left;
+	
+ }
+
+div.nav-main{
+	position: relative;
+	float: left;
+	width:1000px;
+	background-color:#873227;
+	height:45px;
+	color:#ffffff;
+	
+}
+
+div.nav-left {
+	position: relative;
+	float: left;
+	width:180px;
+	background-color:#6F2A20;
+	height:45px;
+	color:#ffffff;
+}
+div.nav-right {
+	position: relative;
+	float: right;
+	width:180px;
+	background-color:#6F2A20;
+	height:45px;
+	color:#ffffff;
+}
+
+div.footer{
+	position: relative;
+	float: left;
+	
+	
+ }
+
+div.footer-main{
+	position: relative;
+	float: left;
+	width:1000px;
+	background-color:#873227;
+	height:100px;
+	color:#ffffff;
+	
+}
+
+div.footer-left {
+	position: relative;
+	float: left;
+	width:180px;
+	background-color:#6F2A20;
+	height:100px;
+	color:#ffffff;
+}
+div.footer-right {
+	position: relative;
+	float: right;
+	width:180px;
+	background-color:#6F2A20;
+	height:100px;
+	color:#ffffff;
+}
+
+.error, .alert, .notice, .success, .info {padding:0.8em;margin-bottom:1em;border:2px solid #ddd;}
+.error, .alert {background:#fbe3e4;color:#8a1f11;border-color:#fbc2c4;}
+.notice {background:#fff6bf;color:#514721;border-color:#ffd324;}
+.success {background:#e6efc2;color:#264409;border-color:#c6d880;}
+.info {background:#d5edf8;color:#205791;border-color:#92cae4;}
+.error a, .alert a {color:#8a1f11;}
+.notice a {color:#514721;}
+.success a {color:#264409;}
+.info a {color:#205791;}

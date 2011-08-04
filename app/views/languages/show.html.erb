@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+
+
+
+
+<p>
+  <b>Lang code:</b>
+  <%= @language.lang_code %>
+</p>
+
+<p>
+  <b>Lang name:</b>
+  <%= @language.lang_name %>
+</p>
+
+<p>
+  <b>Short code:</b>
+  <%= @language.short_code %>
+</p>
+
+<p>
+  <b>I18n identifier:</b>
+  <%= @language.i18n_identifier %>
+</p>
+
+<p>
+  <b>Custom css:</b>
+  <%= @language.custom_css %>
+</p>
+
+<p>
+  <b>Active:</b>
+  <%= @language.active %>
+</p>
+
+<p>
+  <b>In menus:</b>
+  <%= @language.in_menus %>
+</p>
+
+<p>
+  <b>Default domain:</b>
+  <%= @language.default_domain_id %>
+</p>
+
+<p>
+  <b>Root slug:</b>
+  <%= @language.root_slug %>
+</p>
+
+
+<%= link_to 'Edit', edit_language_path(@language) %> |
+<%= link_to 'Back', languages_path %>
