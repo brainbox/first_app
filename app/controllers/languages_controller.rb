@@ -1,5 +1,5 @@
 class LanguagesController < ApplicationController
-
+before_filter :ensure_is_signed_in
  
   # GET /languages
   # GET /languages.xml

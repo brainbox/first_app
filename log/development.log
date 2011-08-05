@@ -2404,3 +2404,130 @@ Processing LanguagesController#index (for 127.0.0.1 at 2011-08-04 19:37:59) [GET
 Rendering template within layouts/application
 Rendering languages/index
 Completed in 1431ms (View: 25, DB: 918) | 200 OK [http://localhost/languages?first=2011-06-05&last=2011-06-26&interval=7]
+
+
+Processing MembersController#index (for 127.0.0.1 at 2011-08-05 12:12:12) [GET]
+  [4;35;1mSQL (279.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `validates' for #<Class:0x7c93200>):
+  app/models/user.rb:7:in `<class:User>'
+  app/models/user.rb:2:in `<top (required)>'
+  rake (0.9.2) lib/rake/ext/module.rb:36:in `const_missing'
+  rake (0.9.2) lib/rake/ext/module.rb:36:in `const_missing'
+  app/helpers/sessions_helper.rb:31:in `user_from_remember_token'
+  app/helpers/sessions_helper.rb:13:in `current_user'
+  app/controllers/application_controller.rb:6:in `ensure_is_signed_in'
+  <internal:prelude>:10:in `synchronize'
+  c:/Ruby192/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  c:/Ruby192/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  c:/Ruby192/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (318.0ms)
+Rendered rescues/_request_and_response (111.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MembersController#index (for 127.0.0.1 at 2011-08-05 13:16:42) [GET]
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Filter chain halted as [:ensure_is_signed_in] rendered_or_redirected.
+Completed in 337ms (DB: 0) | 302 Found [http://localhost/members]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2011-08-05 13:16:43) [GET]
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 234ms (View: 231, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2011-08-05 13:21:54) [POST]
+  Parameters: {"session"=>{"email"=>"man@yahoo.com", "password"=>"123456"}, "commit"=>"Sign in"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'man@yahoo.com') LIMIT 1[0m
+Redirected to http://localhost:3000/members
+Completed in 1457ms (DB: 0) | 302 Found [http://localhost/sessions]
+
+
+Processing MembersController#index (for 127.0.0.1 at 2011-08-05 13:21:56) [GET]
+  [4;36;1mUser Load (17.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering members/index
+Completed in 175ms (View: 44, DB: 17) | 200 OK [http://localhost/members]
+
+
+Processing LanguagesController#index (for 127.0.0.1 at 2011-08-05 13:22:05) [GET]
+  [4;35;1mUser Load (22.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering languages/index
+Completed in 94ms (View: 9, DB: 22) | 200 OK [http://localhost/languages]
+
+
+Processing LanguagesController#index (for 127.0.0.1 at 2011-08-05 13:22:17) [GET]
+  Parameters: {"first"=>"2011-05-01", "last"=>"2011-05-29", "interval"=>"7"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mLanguage Load (2.0ms)[0m   [0mSELECT * FROM "languages" [0m
+  [4;36;1mLetter Load (264.0ms)[0m   [0;1mSELECT * FROM "letters" WHERE (language_id = 1 AND created_at between '2011-05-01' and '2011-05-09') AND ("letters".language_id = 1) [0m
+  [4;35;1mLetter Load (91.0ms)[0m   [0mSELECT * FROM "letters" WHERE (language_id = 1 AND created_at between '2011-05-08' and '2011-05-16') AND ("letters".language_id = 1) [0m
+  [4;36;1mLetter Load (18.0ms)[0m   [0;1mSELECT * FROM "letters" WHERE (language_id = 1 AND created_at between '2011-05-15' and '2011-05-23') AND ("letters".language_id = 1) [0m
+  [4;35;1mLetter Load (18.0ms)[0m   [0mSELECT * FROM "letters" WHERE (language_id = 1 AND created_at between '2011-05-22' and '2011-05-30') AND ("letters".language_id = 1) [0m
+  [4;36;1mLetter Load (41.0ms)[0m   [0;1mSELECT * FROM "letters" WHERE (language_id = 1 AND created_at between '2011-05-29' and '2011-06-06') AND ("letters".language_id = 1) [0m
+  [4;35;1mLetter Load (13.0ms)[0m   [0mSELECT * FROM "letters" WHERE (language_id = 2 AND created_at between '2011-05-01' and '2011-05-09') AND ("letters".language_id = 2) [0m
+  [4;36;1mLetter Load (15.0ms)[0m   [0;1mSELECT * FROM "letters" WHERE (language_id = 2 AND created_at between '2011-05-08' and '2011-05-16') AND ("letters".language_id = 2) [0m
+  [4;35;1mLetter Load (23.0ms)[0m   [0mSELECT * FROM "letters" WHERE (language_id = 2 AND created_at between '2011-05-15' and '2011-05-23') AND ("letters".language_id = 2) [0m
+  [4;36;1mLetter Load (14.0ms)[0m   [0;1mSELECT * FROM "letters" WHERE (language_id = 2 AND created_at between '2011-05-22' and '2011-05-30') AND ("letters".language_id = 2) [0m
+  [4;35;1mLetter Load (13.0ms)[0m   [0mSELECT * FROM "letters" WHERE (language_id = 2 AND created_at between '2011-05-29' and '2011-06-06') AND ("letters".language_id = 2) [0m
+  [4;36;1mLetter Load (348.0ms)[0m   [0;1mSELECT * FROM "letters" WHERE (language_id = 3 AND created_at between '2011-05-01' and '2011-05-09') AND ("letters".language_id = 3) [0m
+  [4;35;1mLetter Load (76.0ms)[0m   [0mSELECT * FROM "letters" WHERE (language_id = 3 AND created_at between '2011-05-08' and '2011-05-16') AND ("letters".language_id = 3) [0m
+  [4;36;1mLetter Load (20.0ms)[0m   [0;1mSELECT * FROM "letters" WHERE (language_id = 3 AND created_at between '2011-05-15' and '2011-05-23') AND ("letters".language_id = 3) [0m
+  [4;35;1mLetter Load (120.0ms)[0m   [0mSELECT * FROM "letters" WHERE (language_id = 3 AND created_at between '2011-05-22' and '2011-05-30') AND ("letters".language_id = 3) [0m
+  [4;36;1mLetter Load (29.0ms)[0m   [0;1mSELECT * FROM "letters" WHERE (language_id = 3 AND created_at between '2011-05-29' and '2011-06-06') AND ("letters".language_id = 3) [0m
+  [4;35;1mLetter Load (15.0ms)[0m   [0mSELECT * FROM "letters" WHERE (language_id = 4 AND created_at between '2011-05-01' and '2011-05-09') AND ("letters".language_id = 4) [0m
+  [4;36;1mLetter Load (25.0ms)[0m   [0;1mSELECT * FROM "letters" WHERE (language_id = 4 AND created_at between '2011-05-08' and '2011-05-16') AND ("letters".language_id = 4) [0m
+  [4;35;1mLetter Load (22.0ms)[0m   [0mSELECT * FROM "letters" WHERE (language_id = 4 AND created_at between '2011-05-15' and '2011-05-23') AND ("letters".language_id = 4) [0m
+  [4;36;1mLetter Load (15.0ms)[0m   [0;1mSELECT * FROM "letters" WHERE (language_id = 4 AND created_at between '2011-05-22' and '2011-05-30') AND ("letters".language_id = 4) [0m
+  [4;35;1mLetter Load (19.0ms)[0m   [0mSELECT * FROM "letters" WHERE (language_id = 4 AND created_at between '2011-05-29' and '2011-06-06') AND ("letters".language_id = 4) [0m
+  [4;36;1mLetter Load (11.0ms)[0m   [0;1mSELECT * FROM "letters" WHERE (language_id = 5 AND created_at between '2011-05-01' and '2011-05-09') AND ("letters".language_id = 5) [0m
+  [4;35;1mLetter Load (13.0ms)[0m   [0mSELECT * FROM "letters" WHERE (language_id = 5 AND created_at between '2011-05-08' and '2011-05-16') AND ("letters".language_id = 5) [0m
+  [4;36;1mLetter Load (8.0ms)[0m   [0;1mSELECT * FROM "letters" WHERE (language_id = 5 AND created_at between '2011-05-15' and '2011-05-23') AND ("letters".language_id = 5) [0m
+  [4;35;1mLetter Load (25.0ms)[0m   [0mSELECT * FROM "letters" WHERE (language_id = 5 AND created_at between '2011-05-22' and '2011-05-30') AND ("letters".language_id = 5) [0m
+  [4;36;1mLetter Load (15.0ms)[0m   [0;1mSELECT * FROM "letters" WHERE (language_id = 5 AND created_at between '2011-05-29' and '2011-06-06') AND ("letters".language_id = 5) [0m
+  [4;35;1mLetter Load (12.0ms)[0m   [0mSELECT * FROM "letters" WHERE (language_id = 6 AND created_at between '2011-05-01' and '2011-05-09') AND ("letters".language_id = 6) [0m
+  [4;36;1mLetter Load (11.0ms)[0m   [0;1mSELECT * FROM "letters" WHERE (language_id = 6 AND created_at between '2011-05-08' and '2011-05-16') AND ("letters".language_id = 6) [0m
+  [4;35;1mLetter Load (11.0ms)[0m   [0mSELECT * FROM "letters" WHERE (language_id = 6 AND created_at between '2011-05-15' and '2011-05-23') AND ("letters".language_id = 6) [0m
+  [4;36;1mLetter Load (13.0ms)[0m   [0;1mSELECT * FROM "letters" WHERE (language_id = 6 AND created_at between '2011-05-22' and '2011-05-30') AND ("letters".language_id = 6) [0m
+  [4;35;1mLetter Load (13.0ms)[0m   [0mSELECT * FROM "letters" WHERE (language_id = 6 AND created_at between '2011-05-29' and '2011-06-06') AND ("letters".language_id = 6) [0m
+  [4;36;1mLetter Load (10.0ms)[0m   [0;1mSELECT * FROM "letters" WHERE (language_id = 7 AND created_at between '2011-05-01' and '2011-05-09') AND ("letters".language_id = 7) [0m
+  [4;35;1mLetter Load (13.0ms)[0m   [0mSELECT * FROM "letters" WHERE (language_id = 7 AND created_at between '2011-05-08' and '2011-05-16') AND ("letters".language_id = 7) [0m
+  [4;36;1mLetter Load (12.0ms)[0m   [0;1mSELECT * FROM "letters" WHERE (language_id = 7 AND created_at between '2011-05-15' and '2011-05-23') AND ("letters".language_id = 7) [0m
+  [4;35;1mLetter Load (11.0ms)[0m   [0mSELECT * FROM "letters" WHERE (language_id = 7 AND created_at between '2011-05-22' and '2011-05-30') AND ("letters".language_id = 7) [0m
+  [4;36;1mLetter Load (10.0ms)[0m   [0;1mSELECT * FROM "letters" WHERE (language_id = 7 AND created_at between '2011-05-29' and '2011-06-06') AND ("letters".language_id = 7) [0m
+Rendering template within layouts/application
+Rendering languages/index
+Completed in 2584ms (View: 30, DB: 1390) | 200 OK [http://localhost/languages?first=2011-05-01&last=2011-05-29&interval=7]
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2011-08-05 13:22:29) [GET]
+Redirected to http://localhost:3000/
+Completed in 71ms (DB: 0) | 302 Found [http://localhost/signout]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2011-08-05 13:22:30) [GET]
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 100ms (View: 96, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2011-08-05 13:22:40) [POST]
+  Parameters: {"session"=>{"email"=>"man@yahoo.com", "password"=>"123456"}, "commit"=>"Sign in"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'man@yahoo.com') LIMIT 1[0m
+Redirected to http://localhost:3000/members
+Completed in 127ms (DB: 1) | 302 Found [http://localhost/sessions]
+
+
+Processing MembersController#index (for 127.0.0.1 at 2011-08-05 13:22:41) [GET]
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering members/index
+Completed in 122ms (View: 14, DB: 0) | 200 OK [http://localhost/members]
